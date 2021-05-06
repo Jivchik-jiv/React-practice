@@ -1,15 +1,18 @@
 import React from 'react';
-import Profile from './content/Profile';
+import Layout from './content/Layout/Layout';
+import Profile from './content/Profile/Profile';
 import user from './content/user.json'
 
 
 const App = () => {
 
   return(
-    <div>
+    <>
+    <Layout >
       <Profile {...user}/>
-    </div>
+    </Layout>
+    </>
   )
 }
 
-export default App
+export default App;
