@@ -1,0 +1,57 @@
+.form {
+    border-radius: 5px;
+    box-shadow:0 0 5px 2px grey;
+    padding: 20px 30px;
+    margin: 30px 0;
+    display: flex;
+    flex-wrap:wrap;
+    justify-content: space-between;
+    background: white;
+
+}
+
+.formBlock {
+ width:33%;  
+ text-align: center; 
+}
+
+.formBlock input{
+    margin: 5px;
+   }
+
+.textItem {
+    display:block;
+    margin: 20px;
+}
+
+
+
+.checkboxItem {
+    margin: 5px;
+}
+
+.checkboxes {
+    margin: 5px;
+}
+
+.checkboxBtn {
+    margin: 10px;
+    background: greenyellow;
+    border: none;
+    padding: 5px 7px;
+    border-radius: 3px;
+}
+
+.checkboxBtn.cancel{
+    background:hotpink;
+}
+
+.checkboxItem {
+    background:aquamarine;
+    padding: 5px 5px;
+    border-radius: 3px;
+}
+
+.checkboxItem input{
+    margin: 5px;
+}

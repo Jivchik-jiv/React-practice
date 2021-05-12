@@ -13,6 +13,7 @@ const Todos = ({todos, deleteTodo}) => {
 
     return (
         <div className ={styles.todos}>
+            <h1 className = {styles.title}>Todo List</h1>
             {todos.map(({id, text, status}) => {
                 return (
                     <div 

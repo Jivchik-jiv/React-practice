@@ -3,6 +3,9 @@
     margin: 30px auto;
 }
 
+.title {
+    text-align: center;
+}
 .todosItem {
     border: 1px solid black;
     margin: 10px;
