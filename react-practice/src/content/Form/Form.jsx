@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Form.module.css";
-
-
+import cx from 'classnames'
 
 const Checkbox = (({value, item, onChange}) => {
  return(
@@ -27,6 +26,8 @@ languagesObj = this.languages.reduce((lngObj, lng)=>({
   [lng]: false
 }), {})
 
+  
+ 
   state = {
     firstName: "",
     lastName: "",
@@ -45,6 +46,8 @@ languagesObj = this.languages.reduce((lngObj, lng)=>({
     this.setState({
       firstName: "",
       lastName: "",
+      level: "junior",
+      checkboxes: {...this.languagesObj}
     });
   }
 
@@ -85,6 +88,7 @@ languagesObj = this.languages.reduce((lngObj, lng)=>({
 
   render() {
     const { firstName, lastName } = this.state;
+    const cancelBtnClasses = cx({[styles.checkboxBtn]: true, [styles.cancel]: true})
     return (
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <div className={styles.formBlock}>
@@ -138,8 +142,8 @@ languagesObj = this.languages.reduce((lngObj, lng)=>({
           <div className = {styles.checkboxes}>
             {this.createCheckboxes(this.languages)}
           </div>
-          <button className = {styles.checkboxBtn} onClick = {this.selectAll}>Select all</button>
-          <button className = {styles.checkboxBtn} onClick = {this.deselectAll}>Select none</button>
+          <button className = {styles.checkboxBtn} onClick = {this.selectAll} type = "button" >Select all</button>
+          <button className = {cancelBtnClasses} onClick = {this.deselectAll} type = "button">Select none</button>
           
         </div>
         <button type="submit">Submit</button>

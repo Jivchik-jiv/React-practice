@@ -6,15 +6,16 @@ import Profile from './content/Profile/Profile';
 import Todos from './content/Todos/Todos';
 import data from './content/data.json'
 import Form from './content/Form/Form';
+import shortid from 'shortid';
 
 
 
 class App extends React.Component {
   state = { 
     todos: [
-      {id:1, text: "I need to cill Rick", status: false},
-      {id:2, text: "Buy three liters of milk", status: true},
-      {id:3, text: "Meet with dr.Strange", status: true}
+      {id:1, text: "I need to cill Rick", completed: false},
+      {id:2, text: "Buy three liters of milk", completed: true},
+      {id:3, text: "Meet with dr.Strange", completed: true}
     ]
    }
 
@@ -26,21 +27,41 @@ class App extends React.Component {
       }))
    }
 
+   createTodo = (text) => {
+     this.setState(({todos})=>({
+        todos: [...todos, {id: shortid.generate(), text, completed: false}]
+     }))
+   }
+
    formSubmitHandler = (data) => {
      console.log(data);
+   }
+
+   toggleComleted = (todoId) => {
+      this.setState(({todos})=> ({
+        todos: todos.map((todo)=> {
+          if (todoId ===todo.id){
+            return {
+              ...todo,
+              completed: !todo.completed
+            }
+          }
+
+          return todo;
+        })
+      }))
    }
 
 
   render() { 
     const todos= this.state.todos;
-    const deleteTodo = this.deleteTodo;
     return(
       <>
       <Layout >
         <Profile {...data.user}/>
         <ColorPicker colors = {data.colors}/>
         <Counter />
-        <Todos todos = {todos} deleteTodo = {deleteTodo} />
+        <Todos todos = {todos} deleteTodo = {this.deleteTodo} onToggleCompleted = {this.toggleComleted} createTodo = {this.createTodo}/>
         <Form formSubmitHandler = {this.formSubmitHandler}/>
       </Layout>
       </>

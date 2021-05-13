@@ -1,33 +1,20 @@
 import React from 'react';
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 import styles from './Todos.module.css'
 
-const Todos = ({todos, deleteTodo}) => {
-
-    const makeOptionClasses = (status) =>{
-        const optionClasses = [styles.todosItem]
-        if(status){
-            optionClasses.push(styles.done)
-        }
-        return optionClasses.join(' ');
-    }
+const Todos = (props) => {
+                    
+   
 
     return (
         <div className ={styles.todos}>
             <h1 className = {styles.title}>Todo List</h1>
-            {todos.map(({id, text, status}) => {
-                return (
-                    <div 
-                    className ={makeOptionClasses(status)}
-                    key ={id}
-                    >
-                        <p>{text}</p>
-                        <button 
-                        className = {styles.todosBtn}
-                        onClick = {()=>deleteTodo(id)}
-                        >Delete</button>
-                    </div>
-                )
-            })}
+            <TodoForm createTodo = {props.createTodo}/>
+            <TodoList {...props}/>
+            
+
+           
         </div>
     )
 }
