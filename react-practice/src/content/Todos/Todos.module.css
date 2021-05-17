@@ -51,7 +51,7 @@
 
 .todoForm {
     text-align:center;
-    height: 200px;
+    
 }
 
 .todoFormText {
@@ -69,4 +69,8 @@
     background: black;
     color: white;
     padding: 5px 8px;
+}
+
+.todoFilter {
+    text-align: center;
 }

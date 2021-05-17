@@ -1,0 +1,32 @@
+.feedback {
+    border-radius: 5px;
+    box-shadow:0 0 5px 2px grey;
+    padding: 20px 30px;
+    margin: 30px 0;
+    background: #fff;
+    text-align: center;
+}
+
+.btn {
+    margin: 10px;
+    background: grey;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 5px;
+    width: 80px;
+    color: #fff;
+    outline: none;
+    box-shadow: 0 0 2px 1px #000;
+}
+
+.btn:active {
+    box-shadow: none;
+}
+
+.list {
+    list-style: none;
+}
+
+.list li::first-letter {
+    text-transform: uppercase;
+}
