@@ -7,6 +7,17 @@ class ColorPicker extends React.Component {
     selectedColorIndex: 0,
   };
 
+  componentDidMount () {
+   if(localStorage.length) {
+     
+     this.setState({selectedColorIndex: +localStorage.getItem('selected')
+    })}
+  }
+
+  componentDidUpdate () {
+    localStorage.setItem('selected', this.state.selectedColorIndex)
+  }
+
   setAtiveIndex = (index) => {
     this.setState({ selectedColorIndex: index });
   };

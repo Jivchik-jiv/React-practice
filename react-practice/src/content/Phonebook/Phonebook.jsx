@@ -1,6 +1,9 @@
 import React from "react";
 import NewContactForm from "./NewContact";
 import styles from "./Phonebook.module.css";
+import {ReactComponent as AddIcon} from '../../Icons/add.svg'
+import IconButton from "../Common/IconButton/IconButton";
+import Modal from "../Common/Modal/Modal";
 
 const ContactsFilter = ({ handleChange, filterContacts }) => {
   return (
@@ -48,6 +51,7 @@ class Phonebook extends React.Component {
   state = {
     name: "",
     phone: "",
+    showModal: false,
   };
 
   handleNewContactChange = (e) => {
@@ -58,19 +62,37 @@ class Phonebook extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createContact(this.state.name, this.state.phone);
-    this.setState({ name: "", phone: "" });
+    this.setState({ name: "", phone: "", showModal: false});
   };
+
+  toggleModal =()=> {
+    this.setState(({showModal})=>({
+      showModal: !showModal
+    }))
+  }
 
   render() {
     return (
       <div className={styles.phonebook}>
         <h1>Phonebook</h1>
-        <NewContactForm
+        <div className = {styles.iconWrap}>
+        <IconButton onClick = {this.toggleModal} aria-label= "Add phone">
+          <AddIcon width="40"/>
+        </IconButton>
+        <span>Add contact</span>
+        </div>
+        
+        {this.state.showModal
+         && 
+        <Modal closeModal = {this.toggleModal}>
+          <NewContactForm
           name={this.state.name}
           handleChange={this.handleNewContactChange}
           handleSubmit={this.handleSubmit}
           phone={this.state.phone}
         />
+        </Modal>
+        }
         <ContactsFilter
           handleChange={this.props.handleFilterChange}
           filterContacts={this.props.filterContatcs}

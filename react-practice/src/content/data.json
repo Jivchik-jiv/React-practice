@@ -18,5 +18,11 @@
       "views": 4827,
       "likes": 1308
     }
-  }
+  },
+  "tabs": [
+    { "id": 1,"title": "The first one", "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "},
+    { "id": 2,"title": "The second one", "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "},
+    { "id": 3,"title": "The therd one", "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "},
+    { "id": 4,"title": "The forth one", "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "}
+]
 }

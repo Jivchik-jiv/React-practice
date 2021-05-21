@@ -1,0 +1,33 @@
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .5);
+}
+
+
+
+.modal {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    min-width: 60%;
+    min-height: 60%;
+    background:bisque;
+    border-radius: 5px;
+    box-shadow: 0 0 2px 0 black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content {
+    width: 90%;
+}
+
+.closeBtn {
+    
+
+}

@@ -74,3 +74,8 @@
 .todoFilter {
     text-align: center;
 }
+
+.addWrap {
+    display: inline-flex;
+    align-items: center;
+}

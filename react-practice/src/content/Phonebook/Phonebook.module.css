@@ -66,3 +66,8 @@
     border-radius: 5px;
 }
 
+.iconWrap {
+    display: inline-flex;
+    align-items: center;
+    text-align: left;
+}

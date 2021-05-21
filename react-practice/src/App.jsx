@@ -9,6 +9,9 @@ import Form from "./content/Form/Form";
 import shortid from "shortid";
 import Feedback from "./content/Feedback/Feedback";
 import Phonebook from "./content/Phonebook/Phonebook";
+import Modal from "./content/Common/Modal/Modal";
+import Tabs from "./content/Tabs/Tabs";
+
 
 class App extends React.Component {
   state = {
@@ -30,7 +33,30 @@ class App extends React.Component {
       { id: 4, name: "Charosy Swings", phone: "343-356-774-36" },
     ],
     filterContacts: "",
+    showModal: false,
+    showColorPicker: false,
+    showProfile: false,
   };
+
+  toggleModal = (e) => {
+    const name = e.currentTarget.name;
+    if(name) {
+      switch (name) {
+        case 'profile':
+         this.setState(({showProfile})=>({showProfile: !showProfile}))
+         break;
+        case 'colorPicker':
+         this.setState(({showColorPicker})=>({showColorPicker: !showColorPicker}))
+         break;
+       default:
+         this.setState(({showModal})=>({showModal: !showModal}))
+      } 
+    } else {
+      this.setState(()=>({showProfile: false, showColorPicker: false, showModal: false}))
+    }
+   
+    
+  }
 
   deleteTodo = (todoId) => {
     this.setState((prevState) => ({
@@ -134,8 +160,14 @@ class App extends React.Component {
     return (
       <>
         <Layout>
-          <Profile {...data.user} />
-          <ColorPicker colors={data.colors} />
+        <button type = "button" onClick = {this.toggleModal} name = "profile">Profile</button>
+        {this.state.showProfile && <Modal closeModal = {this.toggleModal}> <Profile {...data.user} /> </Modal>}
+        <button type = "button" onClick = {this.toggleModal} name = "colorPicker">Color Picker</button>
+        {this.state.showColorPicker 
+        && <Modal closeModal = {this.toggleModal}> 
+              <ColorPicker colors={data.colors} /> 
+          </Modal>}
+          
           <Counter />
           <Todos
             todos={getFilteredTodos()}
@@ -158,7 +190,11 @@ class App extends React.Component {
             filterContacts = {this.state.filterContacts}
             deleteContact = {this.deleteContact}
           />
+          <Tabs tabs = {data.tabs}/>
+
         </Layout>
+        
+        
       </>
     );
   }
