@@ -1,22 +1,21 @@
 import React from "react";
 import styles from "./ColorPicker.module.css";
 import cx from "classnames";
+import {colorsApi} from "./../../services/api";
 
 class ColorPicker extends React.Component {
   state = {
+    colors: [{label: "", color: ""}],
     selectedColorIndex: 0,
   };
 
   componentDidMount () {
-   if(localStorage.length) {
-     
-     this.setState({selectedColorIndex: +localStorage.getItem('selected')
-    })}
+    colorsApi.fetchColors().then(colors=>{
+      this.setState({colors})
+    })
+
   }
 
-  componentDidUpdate () {
-    localStorage.setItem('selected', this.state.selectedColorIndex)
-  }
 
   setAtiveIndex = (index) => {
     this.setState({ selectedColorIndex: index });
@@ -30,7 +29,8 @@ class ColorPicker extends React.Component {
   };
 
   render() {
-    const colors = this.props.colors;
+   
+    const colors = this.state.colors;
     const selectedColorIndex = this.state.selectedColorIndex;
     return (
       <div className={styles.colorPicker}>

@@ -1,0 +1,109 @@
+{
+  "todos": [
+    {
+      "id": 1,
+      "text": "I need to cill Rick",
+      "completed": false
+    },
+    {
+      "id": 2,
+      "text": "Buy three liters of milk",
+      "completed": false
+    },
+    {
+      "id": 3,
+      "text": "Meet with dr.Strange",
+      "completed": false
+    }
+  ],
+  "colors": [
+    {
+      "label": "crimson",
+      "color": "#DC143C"
+    },
+    {
+      "label": "darkorange",
+      "color": "#FF8C00"
+    },
+    {
+      "label": "khaki",
+      "color": "#F0E68C"
+    },
+    {
+      "label": "lime",
+      "color": "#00FF00"
+    },
+    {
+      "label": "teal",
+      "color": "#008080"
+    },
+    {
+      "label": "navy",
+      "color": "#000080"
+    },
+    {
+      "label": "indigo",
+      "color": "#4B0082"
+    }
+  ],
+  "user": {
+    "name": "Jacques Gluke",
+    "tag": "jgluke",
+    "location": "Ocho Rios, Jamaica",
+    "avatar": "https://www.flaticon.com/svg/static/icons/svg/3784/3784184.svg",
+    "stats": {
+      "followers": 5603,
+      "views": 4827,
+      "likes": 1308
+    }
+  },
+  "tabs": [
+    {
+      "id": 1,
+      "title": "The first one",
+      "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "
+    },
+    {
+      "id": 2,
+      "title": "The second one",
+      "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "
+    },
+    {
+      "id": 3,
+      "title": "The therd one",
+      "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "
+    },
+    {
+      "id": 4,
+      "title": "The forth one",
+      "content": "This chapter provides an analysis of international literature on economic development. The aim is to highlight major approaches to economic development in a  historical context. The chapter will mainly be based on post World War II writings on economic development. Four schools of economic thought and their implications will be discussed. These approaches are: the linear stages of growth model, theories and patterns of structural change, the international dependency revolution,  and the neoclassical theories. "
+    }
+  ],
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Bob Rassel",
+      "phone": "123-433-434-34"
+    },
+    {
+      "id": 2,
+      "name": "Rosy Daimon",
+      "phone": "555-122-342-24"
+    },
+    {
+      "id": 3,
+      "name": "Kventin  Queen",
+      "phone": "777-556-533"
+    },
+    {
+      "id": 4,
+      "name": "Charosy Swings",
+      "phone": "343-356-774-36"
+    }
+  ],
+  "feedback": {
+    "good": 5,
+    "neutral": 5,
+    "bad": 3
+  }
+}

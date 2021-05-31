@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./Tabs.module.css";
 import sx from 'classnames';
+import {tabsApi} from "./../../services/api"
 
 const TabsNavigation = ({ tabs, handleChangeTab, selectedTab }) => {
   const getTabsNavigation = (tabs) => {
@@ -48,8 +49,16 @@ const TabsContent = ({tab})=> {
 
 class Tabs extends React.PureComponent {
   state = {
+    tabs: [{title: "", content: ""}],
     selectedTab: 0,
   };
+
+  componentDidMount() {
+    tabsApi.fetchTabs().then(tabs=>{
+      this.setState({tabs})
+    })
+  }
+
 
   handleChangeTab = (tabIndex) => {
     this.setState({selectedTab: tabIndex})
@@ -61,11 +70,11 @@ class Tabs extends React.PureComponent {
       <div className={styles.tabs}>
         <h1>Tabs</h1>
         <TabsNavigation
-          tabs={this.props.tabs}
+          tabs={this.state.tabs}
           handleChangeTab={this.handleChangeTab}
           selectedTab = {this.state.selectedTab}
         />
-        < TabsContent tab = {this.props.tabs[this.state.selectedTab]}/>
+        < TabsContent tab = {this.state.tabs[this.state.selectedTab]}/>
       </div>
     );
   }

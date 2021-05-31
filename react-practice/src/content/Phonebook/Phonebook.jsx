@@ -4,6 +4,7 @@ import styles from "./Phonebook.module.css";
 import {ReactComponent as AddIcon} from '../../Icons/add.svg'
 import IconButton from "../Common/IconButton/IconButton";
 import Modal from "../Common/Modal/Modal";
+import {phonebookApi} from './../../services/api';
 
 const ContactsFilter = ({ handleChange, filterContacts }) => {
   return (
@@ -21,6 +22,8 @@ const ContactsFilter = ({ handleChange, filterContacts }) => {
     
   );
 };
+
+
 
 const Contacts = ({ contacts, onContactDelete }) => {
   return (
@@ -52,6 +55,21 @@ class Phonebook extends React.Component {
     name: "",
     phone: "",
     showModal: false,
+    contacts:[{name:"", phone:"", id:""}],
+    filterContacts: ""
+  };
+
+  componentDidMount (){
+    phonebookApi.fetchContacts()
+    .then(contacts=>{
+      this.setState({contacts})
+    })
+  }
+
+  handleContactsFilterChange = (e) => {
+    
+    const value = e.currentTarget.value;
+    this.setState({ filterContacts: value });
   };
 
   handleNewContactChange = (e) => {
@@ -61,9 +79,27 @@ class Phonebook extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createContact(this.state.name, this.state.phone);
-    this.setState({ name: "", phone: "", showModal: false});
+    const contact = {name: this.state.name, phone: this.state.phone}
+    phonebookApi.addContact(contact).then(contact=>{
+      this.setState(({contacts})=> ({ 
+        name: "", 
+        phone: "", 
+        showModal: false,
+        contacts: [...contacts, contact]
+      }));
+    })
+
   };
+
+  handleDeleteContact = (contactId)=> {
+    phonebookApi.deleteContact(contactId).then(()=>{
+      this.setState((prevState) => ({
+        contacts: prevState.contacts.filter((contact) => {
+          return contact.id !== contactId;
+        }),
+      }));
+    })
+  }
 
   toggleModal =()=> {
     this.setState(({showModal})=>({
@@ -72,6 +108,12 @@ class Phonebook extends React.Component {
   }
 
   render() {
+    const normalizedFilterContacts = this.state.filterContacts.toLowerCase();
+    const getFilteredContatcs = () => {
+      return this.state.contacts.filter((contact)=> {
+        return contact.name.toLowerCase().includes(normalizedFilterContacts)
+      })
+    }
     return (
       <div className={styles.phonebook}>
         <h1>Phonebook</h1>
@@ -94,12 +136,12 @@ class Phonebook extends React.Component {
         </Modal>
         }
         <ContactsFilter
-          handleChange={this.props.handleFilterChange}
+          handleChange={this.handleContactsFilterChange}
           filterContacts={this.props.filterContatcs}
         />
         <Contacts
-          contacts={this.props.contacts}
-          onContactDelete={this.props.deleteContact}
+          contacts={getFilteredContatcs()}
+          onContactDelete={this.handleDeleteContact}
           
         />
       </div>
