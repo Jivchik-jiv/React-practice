@@ -10,6 +10,7 @@ import Phonebook from "./content/Phonebook/Phonebook";
 import Modal from "./content/Common/Modal/Modal";
 import Tabs from "./content/Tabs/Tabs";
 import Articles from "./content/Articles/Articles";
+import ImageGallery from "./content/ImageGallery/ImageGallery";
 
 
 class App extends React.Component {
@@ -65,6 +66,7 @@ class App extends React.Component {
           <Phonebook/>
           <Tabs/>
           <Articles/>
+          <ImageGallery />
 
         </Layout>
         

@@ -1,14 +1,23 @@
 import axios from "axios";
 
+//Your API key is(Images):21872021-de688e9cfaf53d124bb8f01aa
+
+//Your API key is(Articles): a51c0bea7bca4770a81532058948c588
+const instanceLockal = axios.create({
+    baseURL: "http://localhost:3000/",
+})
+
+const instanceArticles = axios.create({
+    headers:{
+        Authorization:"Bearer a51c0bea7bca4770a81532058948c588"
+    }
+})
 
 
-//Your API key is: a51c0bea7bca4770a81532058948c588
-axios.defaults.baseURL = "http://localhost:3000/";
-axios.defaults.headers.common['Authorization'] = "Bearer a51c0bea7bca4770a81532058948c588";
 
 export const colorsApi = {
     fetchColors() {
-        return axios.get("colors").then(({
+        return instanceLockal.get("colors").then(({
             data
         }) => data)
     }
@@ -16,13 +25,13 @@ export const colorsApi = {
 
 export const feedbackApi = {
     fetchFeedback() {
-        return axios.get('feedback').then(({
+        return instanceLockal.get('feedback').then(({
             data
         }) => data)
     },
 
     updateFeedback(update) {
-        return axios
+        return instanceLockal
             .patch('feedback', update)
             .then(({
                 data
@@ -33,14 +42,14 @@ export const feedbackApi = {
 
 export const phonebookApi = {
     fetchContacts() {
-        return axios
+        return instanceLockal
             .get("contacts").then(({
                 data
             }) => data)
     },
 
     addContact(contact) {
-        return axios
+        return instanceLockal
             .post('contacts', contact)
             .then(({
                 data
@@ -49,7 +58,7 @@ export const phonebookApi = {
     },
 
     deleteContact(contactId) {
-        return axios.delete(`contacts/${contactId}`)
+        return instanceLockal.delete(`contacts/${contactId}`)
     },
 }
 
@@ -57,7 +66,7 @@ export const profileApi = {
 
     fetchUser() {
 
-        return axios.get("user").then(({
+        return instanceLockal.get("user").then(({
             data
         }) => {
             return data
@@ -68,7 +77,7 @@ export const profileApi = {
 
 export const todosApi = {
     fetchTodos() {
-        return axios
+        return instanceLockal
             .get("todos")
             .then(({
                 data
@@ -76,7 +85,7 @@ export const todosApi = {
     },
 
     updateTodo(todoId, update) {
-        return axios
+        return instanceLockal
             .patch(`todos/${todoId}`, update)
             .then(({
                 data
@@ -84,12 +93,12 @@ export const todosApi = {
     },
 
     deleteTodo(todoId) {
-        return axios
+        return instanceLockal
             .delete(`todos/${todoId}`)
     },
 
     createTodo(todo) {
-        return axios.post("todos", todo)
+        return instanceLockal.post("todos", todo)
             .then(({
                 data
             }) => data)
@@ -100,7 +109,7 @@ export const todosApi = {
 
 export const tabsApi = {
     fetchTabs() {
-        return axios.get("tabs").then(({
+        return instanceLockal.get("tabs").then(({
             data
         }) => data);
     }
@@ -109,10 +118,24 @@ export const tabsApi = {
 export const articlesApi = {
 
     fetchArticles(query,page) {
-       return axios
+       return instanceArticles
             .get(`https://newsapi.org/v2/everything?q=${query}&from=2021-05-15&sortBy=publishedAt&pageSize=5&page=${page}`)
             .then(({data: {articles}}) => {
                 return articles
             })
     }
 }
+
+
+export const galleryApi = {
+   
+    fetchImages (query="ocean", page=1){
+        
+        return axios
+            .get(`https://pixabay.com/api/?q=${query}&page=${page}&image_type=photo&orientation=horizontal&per_page=12&key=21872021-de688e9cfaf53d124bb8f01aa`)
+            .then(responce=>{
+                return responce.data.hits
+            })
+}
+    }
+    
