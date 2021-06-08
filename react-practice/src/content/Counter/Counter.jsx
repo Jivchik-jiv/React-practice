@@ -18,7 +18,7 @@ class Counter extends React.Component {
     render(){
         const counter = this.state.counterValue;
         return(
-            <div className = {styles.counter}>
+            <div className = "mainBox">
                 <h2>Counter</h2>
                 <p>{counter}</p>
                 <button className = {styles.btn}

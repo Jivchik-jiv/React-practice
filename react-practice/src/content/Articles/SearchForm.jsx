@@ -22,8 +22,10 @@ class SearchForm extends React.Component {
             <form onSubmit = {this.handleSubmit} className= {styles.form}>
                 <input type="text"
                         value = {this.state.query}
-                        onChange = {this.handleChange}/>
-                <button>Search</button>
+                        onChange = {this.handleChange}
+                        className = {styles.searchField}/>
+                        
+                <button className = {styles.searchBtn}>Search</button>
             </form>
         )
     }

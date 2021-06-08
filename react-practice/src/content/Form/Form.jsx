@@ -42,7 +42,7 @@ languagesObj = this.languages.reduce((lngObj, lng)=>({
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.formSubmitHandler(this.state);
+    this.props.handleSubmit(this.state);
     this.setState({
       firstName: "",
       lastName: "",
@@ -90,6 +90,7 @@ languagesObj = this.languages.reduce((lngObj, lng)=>({
     const { firstName, lastName } = this.state;
     const cancelBtnClasses = cx({[styles.checkboxBtn]: true, [styles.cancel]: true})
     return (
+      <div className = "mainBox">
       <form className={styles.form} onSubmit={this.handleSubmit}>
         <div className={styles.formBlock}>
           <label className={styles.textItem}>
@@ -148,6 +149,7 @@ languagesObj = this.languages.reduce((lngObj, lng)=>({
         </div>
         <button type="submit">Submit</button>
       </form>
+      </div>
     );
   }
 }

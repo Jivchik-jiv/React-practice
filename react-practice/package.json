@@ -13,6 +13,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-loader-spinner": "^4.0.0",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "shortid": "^2.2.16",
     "web-vitals": "^1.1.1"
@@ -22,7 +23,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "api-server": "json-server --delay 200 --watch db.json"
+    "api-server": "json-server --delay 200 --watch --port 3001 --routes routes.json db.json"
   },
   "eslintConfig": {
     "extends": [

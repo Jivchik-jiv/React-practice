@@ -50,7 +50,7 @@ class ImageGallery extends React.Component {
 
   render() {
     return (
-      <div className={styles.gallery}>
+      <div className="mainBox">
         <h1>Image Gallery</h1>
         <SearchBar onSubmit = {this.handleSubmit}/>
         <ul className={styles.galleryWrap}>

@@ -3,8 +3,11 @@ import axios from "axios";
 //Your API key is(Images):21872021-de688e9cfaf53d124bb8f01aa
 
 //Your API key is(Articles): a51c0bea7bca4770a81532058948c588
+
+
+//Api key google books:  AIzaSyCFjUhli6L0tvz1aDWyhh9uJqOeQwsZ81c
 const instanceLockal = axios.create({
-    baseURL: "http://localhost:3000/",
+    baseURL: "http://localhost:3001/",
 })
 
 const instanceArticles = axios.create({
@@ -12,6 +15,8 @@ const instanceArticles = axios.create({
         Authorization:"Bearer a51c0bea7bca4770a81532058948c588"
     }
 })
+
+
 
 
 
@@ -139,3 +144,39 @@ export const galleryApi = {
 }
     }
     
+
+export const marvelApi = {
+    fetchHeros (){
+        
+        return instanceLockal.get('marvel/heros').then(({data})=>data)
+    },
+
+    fetchMovies (){
+        
+        return instanceLockal.get('marvel/movies').then(({data})=>data)
+    }
+}
+
+
+export const booksApi = {
+    fetchRecommendedBooks ()  {
+        return axios
+        .get("https://www.googleapis.com/books/v1/volumes?q=intitle:potter&key=AIzaSyCFjUhli6L0tvz1aDWyhh9uJqOeQwsZ81c&langRestrict=en&projection=lite")
+        .then(result=> {
+            // debugger;
+            const lightBooks = result.data.items.map(book=>{
+                // debugger;
+                return {
+                    id: book.id,
+                    title: book.volumeInfo.title,
+                    authors: book.volumeInfo.authors,
+                    description: book.volumeInfo.description,
+                    image: book.volumeInfo.imageLinks ? book.volumeInfo.imageLinks.thumbnail : null
+
+                }
+            }) 
+            return lightBooks;
+        })
+    }
+}
+

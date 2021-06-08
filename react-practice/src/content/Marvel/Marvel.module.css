@@ -1,0 +1,52 @@
+.mainWrap {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    justify-items: stretch;
+    padding-bottom: 20px;
+    border-bottom: 5px solid grey;
+}
+
+.nav {
+    margin-bottom: 10px;
+    
+}
+
+.link{
+    text-decoration: none;
+    margin: 10px;
+    color: black;
+}
+
+.active {
+color: blueviolet;
+}
+
+.heroBox {
+    position: relative;
+    padding: 5px;
+}
+
+.heroImg {
+    width: 50%;
+    display: block;
+    object-fit: cover;
+    background:#fff;
+    margin: auto;
+    margin-bottom: 30px;
+
+}
+
+.btn {
+    position: absolute;
+    bottom: 0;
+    left: 35%;
+}
+
+.good {
+    border: 3px solid green;
+}
+
+.bad {
+    border: 3px solid red;
+}

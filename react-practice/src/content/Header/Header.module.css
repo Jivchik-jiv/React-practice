@@ -2,4 +2,21 @@
     width: 100%;
     height: 100px;
     background-color: aquamarine;
+    padding: 10px;
+}
+
+.navigation ul{
+
+    list-style: none;
+
+}
+
+.link {
+    text-decoration: none;
+    color: black;
+}
+
+
+.currentPage{
+    color: red;
 }

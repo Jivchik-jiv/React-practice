@@ -115,7 +115,7 @@ class Phonebook extends React.Component {
       })
     }
     return (
-      <div className={styles.phonebook}>
+      <div className="mainBox">
         <h1>Phonebook</h1>
         <div className = {styles.iconWrap}>
         <IconButton onClick = {this.toggleModal} aria-label= "Add phone">

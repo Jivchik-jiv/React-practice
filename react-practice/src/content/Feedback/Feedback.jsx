@@ -67,7 +67,7 @@ class Feedback extends React.Component {
       ? ((this.state.feedback.good / this.getTotalFeedback()) * 100).toFixed(2)
       : 0;
     return (
-      <div className={styles.feedback}>
+      <div className="mainBox">
         <h1 className={styles.title}>Feedback Box</h1>
         <div>
           <h3>Please, leave your feedback</h3>

@@ -67,7 +67,7 @@ class Tabs extends React.PureComponent {
  
   render() {
     return (
-      <div className={styles.tabs}>
+      <div className="mainBox">
         <h1>Tabs</h1>
         <TabsNavigation
           tabs={this.state.tabs}

@@ -79,7 +79,7 @@ class Todos extends React.Component {
         });
       };
     return (
-      <div className={styles.todos}>
+      <div className="mainBox">
         <h1 className={styles.title}>Todo List</h1>
         <div className={styles.addWrap}>
           <IconButton onClick={this.toggleModal} aria-label="Add todo">

@@ -44,15 +44,15 @@ class Articles extends React.Component {
 
     render(){
         return (
-            <div className= {styles.articles}>
+            <div className= "mainBox">
                <h1>Articles</h1>
                <SearchForm onSubmit = {this.handleSubmit}/>
                
-                <ul>
+                <ul className = {styles.list}>
                     {this.state.articles.map(({title, url})=>{
                         return (
                             <li key= {title}>
-                                <a href={url}>{title}</a>
+                                <a href={url} className = {styles.link}>{title}</a>
                               
                             </li>
                         )

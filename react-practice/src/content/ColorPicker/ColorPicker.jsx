@@ -33,7 +33,7 @@ class ColorPicker extends React.Component {
     const colors = this.state.colors;
     const selectedColorIndex = this.state.selectedColorIndex;
     return (
-      <div className={styles.colorPicker}>
+      <div className="mainBox">
         <h1>Colors to pick</h1>
         <p>Picked {colors[selectedColorIndex].label} color</p>
         <div>

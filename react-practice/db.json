@@ -102,8 +102,75 @@
     }
   ],
   "feedback": {
-    "good": 6,
-    "neutral": 6,
-    "bad": 3
-  }
+    "good": 17,
+    "neutral": 14,
+    "bad": 10
+  },
+  "heros": [
+    {
+      "id": 1,
+      "name": "Hulk",
+      "age": 38,
+      "isGood": true,
+      "image": "https://upload.wikimedia.org/wikipedia/en/a/aa/Hulk_%28circa_2019%29.png"
+    },
+    {
+      "id": 2,
+      "name": "Thanos",
+      "age": 8791102,
+      "isGood": false,
+      "image": "https://lh3.googleusercontent.com/proxy/8NBRjGoKzW3AzF6GoK1oTYvbOij78w30yCfe1QeFgKQmyRTLltmyHCCnP215jPcOzE01oYNwTUH5xzUjRur_UOB8Qeo9PVSWhy_UDRs_sdLnqvBB-A"
+    },
+    {
+      "id": 3,
+      "name": "dr. Strange",
+      "age": 42,
+      "isGood": true,
+      "image": "https://www.pngkey.com/png/full/835-8356909_png-doutor-estranho-dr-strange.png"
+    }
+  ],
+  "movies": [
+    {
+      "id": 1,
+      "name": "Hulk",
+      "productionYear": 2003,
+      "image": " https://upload.wikimedia.org/wikipedia/en/5/59/Hulk_movie.jpg",
+      "heroId": 1
+    },
+    {
+      "id": 2,
+      "name": "The Incredible Hulk",
+      "productionYear": 2008,
+      "image": "https://upload.wikimedia.org/wikipedia/en/8/88/The_Incredible_Hulk_poster.jpg",
+      "heroId": 1
+    },
+    {
+      "id": 3,
+      "name": "The Avengers",
+      "productionYear": 2012,
+      "image": "https://upload.wikimedia.org/wikipedia/en/8/8a/The_Avengers_%282012_film%29_poster.jpg",
+      "heroId": 2
+    },
+    {
+      "id": 4,
+      "name": "The Avengers",
+      "productionYear": 2014,
+      "image": "https://upload.wikimedia.org/wikipedia/en/b/b5/Guardians_of_the_Galaxy_poster.jpg",
+      "heroId": 2
+    },
+    {
+      "id": 5,
+      "name": "Doctor Strange",
+      "productionYear": 2016,
+      "image": "https://upload.wikimedia.org/wikipedia/en/c/c7/Doctor_Strange_poster.jpg",
+      "heroId": 3
+    },
+    {
+      "id": 6,
+      "name": "Avengers: Endgame",
+      "productionYear": 2019,
+      "image": "https://upload.wikimedia.org/wikipedia/en/0/0d/Avengers_Endgame_poster.jpg",
+      "heroId": 3
+    }
+  ]
 }
